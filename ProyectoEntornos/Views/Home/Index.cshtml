@@ -1,0 +1,23 @@
+﻿@model CurrentWeather 
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="main-content">
+    <h1>🌤 El Tiempo En Barcelona 🌤</h1>
+
+    @if (Model != null)
+    {
+        <div class="weather-box">
+            <p><strong>🕒 Hora:</strong> @Model.Time</p>
+            <p><strong>🌡️ Clima:</strong> @Model.WeatherDescription</p>
+            <p><strong>🔥 Temperatura:</strong> @Model.Temperature °C</p>
+            <p><strong>💨 Viento:</strong> @Model.WindSpeed km/h</p>
+            <p><strong>🧭 Dirección:</strong> @Model.WindDirection°</p>
+            <p><strong>🌗 Momento del día:</strong> @(Model.IsDay == 1 ? "Día 🌞" : "Noche 🌙")</p>
+        </div>
+    }
+    else
+    {
+        <p style="color: red;">❌ No se pudieron cargar los datos meteorológicos.</p>
+    }
+</div>
+
